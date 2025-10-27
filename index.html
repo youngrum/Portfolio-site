@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+      <nav class="nav-container">
+          <a href="./index.html" class="logo">Portfolio</a>
+          <button class="menu-toggle" onclick="toggleMenu()">
+              <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="navMenu">
+              <li><a href="./index.html#works" class="nav-link">Works</a></li>
+              <li><a href="./index.html#skills" class="nav-link">Skills</a></li>
+              <li><a href="./index.html#about" class="nav-link">About</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-container"> <div class="hero-content">
+      <h1>Portfolio<br>site</h1>
+      <p>ご覧いただきありがとうございます<br>これは制作物紹介サイトです</p>
+      <a href="#works" class="cta-button">View Works</a>
+    </div>
+    <div class="hero-image-scroll">
+      <div class="swiper" id="heroSwiper"> 
+        <div class="swiper-wrapper">
+          <div class="swiper-slide carousel-slide">
+              <img src="./assets/images/inventory-app-main.jpg" alt="Project Mockup 1" class="slide-image">
+          </div>
+          <div class="swiper-slide carousel-slide">
+              <img src="./assets/images/navitix-app-main.jpg" alt="Project Mockup 2" class="slide-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <h2 class="section-title"> Works</h2>
+    <div class="works-grid">
+      <button class="work-card fade-in" data="./works1.html" onclick="redirect(this)">
+        <h3 class="work-title">在庫管理システム</h3>
+        <div class="work-tags">
+          <span class="tag">Spring Boot(java)</span>
+          <span class="tag">Next.js(TypeScript)</span>
+          <span class="tag">tailWindCSS(css)</span>
+          <span class="tag">Figma(Design)</span>
+          <span class="tag">H2DB(DB)</span>
+        </div>
+        <p class="work-description">本格導入前のプロトタイプとして作成。H2DBをサーバーモードでNAS上にデプロイすることで疑似的にRDB設計を実現</p>
+      </button>
+      <button class="work-card fade-in" data="./works2.html" onclick="redirect(this)">
+        <h3 class="work-title">会員制映画チケット予約WEBサービス</h3>
+        <div class="work-tags">
+        <div class="work-tags">
+          <span class="tag">Next.js(TypeScript)</span>
+          <span class="tag">Mui(css)</span>
+          <span class="tag">Figma(Design)</span>
+          <span class="tag">supabase(DB)</span>
+        </div>
+        <p class="work-description">Next.jsでバックエンドも実装したWEBサービス。映画館検索・会員登録・映画作品予約・決済(stripe)を実装</p>
+      </button>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-container">
+        <div class="skill-item">
+            <div class="skill-name">PHP</div>
+            <div class="skill-exp">4年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-exp">4年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">HTML5 / CSS3</div>
+          <div class="skill-exp">5年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">SCSS</div>
+            <div class="skill-exp">3年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Laravel</div>
+            <div class="skill-exp">3年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">jQuery</div>
+            <div class="skill-exp">4年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">MySQL</div>
+            <div class="skill-exp">3年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Git</div>
+            <div class="skill-exp">4年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Java</div>
+            <div class="skill-exp">半年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">TypeScript</div>
+            <div class="skill-exp">1年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Next.js</div>
+            <div class="skill-exp">1年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Spring Boot</div>
+            <div class="skill-exp">半年 | 実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">AWS</div>
+            <div class="skill-exp">半年 | EC2, Lambda, ELB等</div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-name">Figma</div>
+            <div class="skill-exp">半年 | UI/UXデザイン</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Docker</div>
+            <div class="skill-exp">実務経験</div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-name">Linux</div>
+            <div class="skill-exp">2年 | サーバー運用</div>
+        </div>
+    </div>
+        
+    <div class="certifications">
+        <h3 class="cert-heading">保有資格</h3>
+        <div class="cert-list">
+            <div class="cert-item">
+                <i class="fas fa-certificate"></i>
+                <span>サーティファイ Webクリエイター能力認定試験 HTML4.01対応 上級</span><span class="cert-info">- 2019年3月取得</span>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-certificate"></i>
+                <span>情報セキュリティマネジメント試験</span><span class="cert-info">- 2023年10月取得</span>
+            </div>
+            <div class="cert-item">
+                <i class="fas fa-certificate"></i>
+                <span>AWS Certified Solutions Architect - Associate</span><span class="cert-info">- 2023年12月取得</span>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+          <div class="about-info fade-in">
+            <h3 class="about-name">村川 拓真</h3>
+            <p class="about-label">1991年9月22日生</p>
+          </div>
+          <div class="about-text fade-in">
+              <p>製造業事務から、フロントエンドエンジニアとして転職しました。</p>
+              <p>徐々にバックエンド→サーバーへの知見も深め、AWSリソースを使ったサーバーの保守運用も経験があります。</p>
+              <p>直近では在庫管理システムの提案に始まり技術スタック選定、運API設計、デザイン、実装、テストなど幅広く対応していました。</p>
+
+              <div class="social-links">
+                <a href="https://github.com/youngrum" class="social-link"><i class="fab fa-github"></i></a>
+              </div>
+              
+              <h3 class="career-heading">ITにおける職務経歴</h3>
+              <div class="career-timeline" id="careerTimeline">
+                  <div class="timeline-line-wrapper">
+                      <div class="timeline-line-bg"></div>
+                      <div class="timeline-line-progress" id="timelineProgress"></div>
+                  </div>
+
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-period">2019.05 - 2023.06</div>
+                      <div class="timeline-content">
+                          <h4 class="timeline-company">株式会社A社（正社員・派遣）</h4>
+                          <p class="timeline-role">Webサイト開発・サーバー保守運用</p>
+                          <p class="timeline-desc">HTML, CSS, Javascript(JQuey), WordPress, PHP(Laravel), Docker, Git</p>
+                          <p class="timeline-desc">運用サイトの改修・リニューアル、新規サイト立ち上げを担当。売上規模1億円/月のサイトリニューアルでCVR昨月比1.4倍増を達成。</p>
+                      </div>
+                  </div>Webサイト開発・サーバー保守運用
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-period">2024.01 - 2024.02</div>
+                      <div class="timeline-content">
+                          <h4 class="timeline-company">育休取得 → 株式会社Ｇ社（業務委託）</h4>
+                          <p class="timeline-role">Webサイト開発</p>
+                          <p class="timeline-desc">Next.js, tailwindCSS, Git</p>
+                          <p class="timeline-desc">飲食店向けファンコミュニティの会員制WEBサービスのフロントエンド実装・バックエンドAPI繋ぎこみを担当。</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-period">2024.05 - 2024.06</div>
+                      <div class="timeline-content">
+                          <h4 class="timeline-company">株式会社A社 5月育休復帰～6月退職</h4>
+                          <p class="timeline-role">サーバー保守運用・社内部署へのセキュリティヒアリング</p>
+                          <p class="timeline-desc">AWSリソースでのサーバー管理【EC2インスタンスの切り替え(ELB, route53)、AthenaでWAFのログ集計などを担当。</p>
+                      </div>
+                  </div>                  
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-period">2024.07 - 2024.11</div>
+                      <div class="timeline-content">
+                          <h4 class="timeline-company">S株式会社 (派遣)</h4>
+                          <p class="timeline-role">基幹システムの保守・運用</p>
+                          <p class="timeline-desc">電子部品メーカーの基幹システムにおけるUI実装とテスト業務。テスト項目不備の改修提案と反映を実施。</p>
+                        </div>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-period">2025.01 - 2025.10</div>
+                        <div class="timeline-content">
+                          <h4 class="timeline-company">株式会社S社（派遣）</h4>
+                          <p class="timeline-role">在庫管理システムの開発</p>
+                          <p class="timeline-desc">Next.js, MUI, supabase, Git</p>
+                          <p class="timeline-desc">要件定義からリリースまで一人で対応。Spring Bootを用いたRESTful APIの設計・実装、Next.jsでのフロントエンド開発を担当。</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Thank you for your interest<(_ _)></h2>
+    <div class="contact-content">
+      <p class="contact-info">ご覧いただきありがとうございました。</p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Portfolio. All rights reserved.</p>
+</footer>
+</body>
+</html>

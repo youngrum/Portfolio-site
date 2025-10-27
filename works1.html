@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在庫管理システム - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/work-detail.css">
+  <script src="./assets/js/script.js" defer></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+<body>
+  <header class="header">
+      <nav class="nav-container">
+          <a href="./index.html" class="logo">Portfolio</a>
+          <button class="menu-toggle" onclick="toggleMenu()">
+              <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="navMenu">
+              <li><a href="./index.html#works" class="nav-link">Works</a></li>
+              <li><a href="./index.html#skills" class="nav-link">Skills</a></li>
+              <li><a href="./index.html#about" class="nav-link">About</a></li>
+          </ul>
+      </nav>
+  </header>
+  <section class="work-hero">
+      <div class="work-hero-content">
+        <div class="breadcrumb">
+            <a href="./index.html">Home</a>
+            <span>/</span>
+            <a href="./index.html#works">Works</a>
+            <span>/</span>
+            <span>在庫管理システム</span>
+        </div>
+        <div class="work-hero-text">
+          <h1 class="work-hero-title">在庫管理システム</h1>
+          <p class="work-hero-subtitle">中小企業向けの在庫管理システム(プロトタイプ)</p>
+          <div class="work-hero-tags">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Next.js(TypeScript)</span>
+              <span class="tag">tailWindCSS</span>
+              <span class="tag">Figma(Design)</span>
+              <span class="tag">H2DB</span>
+          </div>
+          <div class="github-links">
+            <a href="https://github.com/youngrum/stock-system-frontend" target="_blank" class="github-link-button frontend-link">
+              <i class="fab fa-github" style="padding-right:10px"></i>
+              <span>Frontend Repository</span>
+            </a>
+            <a href="https://github.com/youngrum/stock-system-backend" target="_blank" class="github-link-button backend-link">
+              <i class="fab fa-github" style="color: white; padding-right:10px"></i>
+                <span>Backend Repository</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="work-hero-image">
+          <img src="./assets/images/inventory-app-main.jpg" alt="在庫管理システム メイン画面">
+      </div>
+  </section>
+
+  <section class="work-section">
+      <div class="work-container">
+          <h2 class="section-title">プロジェクト概要</h2>
+          <div class="work-content">
+              <p>本格導入前のプロトタイプとして作成した在庫管理システムです。H2DBをサーバーモードでNAS上にデプロイすることで疑似的にRDB設計を実現し、低コストで運用可能なシステムを構築しました。</p>
+              <p>要件定義からリリースまで一人で対応し、ユーザーヒアリングを通じて現場の業務フローに最適化した設計を行いました。</p>
+          </div>
+
+          <div class="project-info-grid">
+              <div class="project-info-item">
+                  <h4>期間</h4>
+                  <p>2025年4月 - 2025年7月</p>
+              </div>
+              <div class="project-info-item">
+                  <h4>役割</h4>
+                  <p>要件定義 / 設計 / 実装 / テスト / デプロイ</p>
+              </div>
+              <div class="project-info-item">
+                  <h4>チーム規模</h4>
+                  <p>1名（個人開発）</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="work-section tech-stack-section">
+      <div class="work-container">
+          <h2 class="section-title">技術スタック</h2>
+          
+          <div class="tech-category">
+              <h3 class="tech-category-title">フロントエンド</h3>
+              <div class="tech-grid">
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-react"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Next.js 14</h4>
+                          <p>App Router使用、SSR/SSG対応</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-js"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>typescript</h4>
+                          <p>型安全性を考慮したコーディング</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-css3-alt"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Tailwind CSS</h4>
+                          <p>ユーティリティファーストのスタイリング</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="tech-category">
+              <h3 class="tech-category-title">バックエンド</h3>
+              <div class="tech-grid">
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-java"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Spring Boot 3.x</h4>
+                          <p>RESTful API設計・実装</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-database"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>H2 Database</h4>
+                          <p>サーバーモードでNAS上に配置</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-server"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Spring Data JPA</h4>
+                          <p>ORMによるデータアクセス層実装</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="tech-category">
+              <h3 class="tech-category-title">デプロイ環境・ツール</h3>
+              <div class="tech-grid">
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-network-wired"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>NAS（Network Attached Storage）</h4>
+                          <p>データベースのみホスティング<br>アプリケーションはカスタムJREをパッケージ化して配布形式(コスト優先でリリースのため)</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-figma"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Figma</h4>
+                          <p>UI/UXデザイン・プロトタイピング</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-git-alt"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Git</h4>
+                          <p>バージョン管理</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="work-section db-design-section">
+      <div class="work-container">
+        <h2 class="section-title">テーブル設計</h2>
+              
+        <div class="mermaid">
+        erDiagram
+        users {
+            varchar(64) username PK "NOT NULL"
+            varchar(255) password "NOT NULL"
+            boolean enabled "NOT NULL"
+        }
+
+        stock_master {
+            bigint id PK "AUTO_INCREMENT"
+            varchar(32) item_code UK "UNIQUE"
+            varchar(128) item_name "NOT NULL"
+            varchar(64) model_number
+            varchar(32) category "NOT NULL"
+            varchar(64) manufacturer
+            decimal current_stock "NOT NULL, DEFAULT 0"
+            varchar(64) location
+            timestamp last_updated
+        }
+
+        inventory_transaction {
+            bigint id PK "AUTO_INCREMENT"
+            varchar transaction_id "NOT NULL"
+            varchar(32) item_code FK "NOT NULL"
+            varchar order_no FK
+            varchar(32) transaction_type "NOT NULL"
+            decimal quantity "NOT NULL"
+            varchar(64) operator "NOT NULL"
+            timestamp transaction_time "DEFAULT CURRENT_TIMESTAMP, NOT NULL"
+            varchar(64) manufacturer
+            varchar(64) supplier
+            decimal purchase_price "precision 10 scale 2"
+            varchar(255) remarks
+        }
+
+        purchase_order {
+            bigint id PK "AUTO_INCREMENT"
+            varchar order_no UK "UNIQUE, NOT NULL"
+            varchar(64) supplier "NOT NULL"
+            decimal order_subtotal "NOT NULL, DEFAULT 0, precision 14 scale 2"
+            date order_date "NOT NULL"
+            decimal shipping_fee "NOT NULL, DEFAULT 0, precision 10 scale 2"
+            varchar(64) operator "NOT NULL"
+            varchar status "NOT NULL, DEFAULT 未完了"
+            varchar(255) remarks
+            date created_at "DEFAULT CURRENT_DATE"
+        }
+
+        purchase_order_detail {
+            bigint id PK "AUTO_INCREMENT"
+            varchar order_no FK "NOT NULL"
+            varchar item_code
+            varchar item_name
+            varchar model_number
+            varchar category
+            decimal quantity "NOT NULL"
+            decimal purchase_price "NOT NULL"
+            decimal received_quantity "DEFAULT 0"
+            varchar status "DEFAULT 未入庫"
+            varchar remarks
+        }
+
+        numbering_master {
+            bigint id PK "AUTO_INCREMENT"
+            varchar(10) department_code "NOT NULL"
+            varchar(20) numbering_type "NOT NULL"
+            int fiscal_year "NOT NULL"
+            bigint current_decimal_number "NOT NULL"
+            timestamp created_at "NOT NULL, NOT UPDATABLE"
+            timestamp updated_at "NOT NULL"
+            int version "楽観的排他制御"
+        }
+
+        %% Relationships
+        stock_master ||--o{ inventory_transaction : "item_code"
+        purchase_order ||--o{ inventory_transaction : "order_no"
+        purchase_order ||--o{ purchase_order_detail : "order_no"
+        numbering_master ||--o{ purchase_order : "generates order_no"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work-section">
+      <div class="work-container">
+          <h2 class="section-title">実装の背景と工夫した点</h2>
+          
+          <div class="feature-list">
+              <div class="feature-item">
+                  <div class="feature-number">01</div>
+                  <div class="feature-content">
+                      <h3>低コストでのRDB環境構築</h3>
+                      <p>Microsoft Accessのライセンス費用や互換性の問題を回避するため、オープンソースのH2 Databaseを選定しました。サーバー（OS）導入コストを徹底的に抑え、迅速なプロトタイプリリースを優先するため、NAS上にデータベースファイルを配置し、ネットワーク経由で複数クライアントから低コストかつ限定的な同時接続環境を実現しました。これは、本格的なRDBMSのデータ永続化を低予算で再現し、段階的な予算獲得と本格RDBMSへの移行の足掛かりと位置づけた暫定的なプロトタイプ構成です。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">02</div>
+                  <div class="feature-content">
+                      <h3>RESTful API設計</h3>
+                      <p>Spring Bootを使用し、REST原則に則ったAPI設計を行いました。エンドポイントの命名規則を統一し、HTTPメソッド（GET, POST, PUT, DELETE）を適切に使い分けることで、直感的で保守性の高いAPIを実現しました。また、例外ハンドリングとバリデーションを適切に実装し、エラー時のレスポンスも統一しました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">03</div>
+                  <div class="feature-content">
+                      <h3>ユーザー中心のUI/UX設計</h3>
+                      <p>Figmaでプロトタイプを作成し、実際の現場担当者とレビューを重ねながらUIを改善しました。在庫の検索・フィルタリング機能を充実させ、最小在庫数を下回る商品をアラート表示するなど、実務で必要とされる機能を優先的に実装しました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">04</div>
+                  <div class="feature-content">
+                      <h3>データ整合性の担保</h3>
+                      <p>在庫数の更新時にはトランザクション管理を適切に行い、同時アクセス時のデータ不整合を防止しました。また、入出庫履歴を別テーブルで管理することで、在庫数の変動履歴を追跡可能にし、監査証跡としても活用できる設計にしました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">05</div>
+                  <div class="feature-content">
+                      <h3>スケーラビリティを考慮した設計</h3>
+                      <p>プロトタイプではあるものの、将来的な本格導入を見据えた設計を意識しました。データベース層とビジネスロジック層を適切に分離し、将来的にPostgreSQLやMySQLへの移行が容易に行える構造にしました。また、環境変数による設定管理を行い、開発・本番環境の切り替えがスムーズに行える仕組みを構築しました。</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="work-section back-section">
+      <div class="work-container">
+          <a href="./index.html#works" class="back-button">
+              <i class="fas fa-arrow-left"></i>
+              Works一覧に戻る
+          </a>
+      </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Portfolio. All rights reserved.</p>
+  </footer>
+</body>
+</html>

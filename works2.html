@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>映画チケット予約システム - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css"> 
+  <link rel="stylesheet" href="./assets/css/work-detail.css">
+  <script src="./assets/js/script.js" defer></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+<body>
+  <header class="header">
+      <nav class="nav-container">
+          <a href="./index.html" class="logo">Portfolio</a>
+          <button class="menu-toggle" onclick="toggleMenu()">
+              <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="navMenu">
+              <li><a href="./index.html#works" class="nav-link">Works</a></li>
+              <li><a href="./index.html#skills" class="nav-link">Skills</a></li>
+              <li><a href="./index.html#about" class="nav-link">About</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <section class="work-hero">
+      <div class="work-hero-content">
+        <div class="breadcrumb">
+            <a href="./index.html">Home</a>
+            <span>/</span>
+            <a href="./index.html#works">Works</a>
+            <span>/</span>
+            <span>映画チケット予約システム</span>
+        </div>
+        <div class="work-hero-text">
+          <h1 class="work-hero-title">映画予約サービス</h1>
+          <p class="work-hero-subtitle">会員認証・決済機能を備えたモダンな予約システム</p>
+          <div class="work-hero-tags">
+              <span class="tag">Next.js(TypeScript)</span>
+              <span class="tag">MUI</span>
+              <span class="tag">Figma(Design)</span>
+              <span class="tag">supabase(PostgreSQL)</span>
+          </div>
+          <div class="github-links">
+            <a href="https://github.com/youngrum/navitix-app" target="_blank" class="github-link-button frontend-link">
+              <i class="fab fa-github" style="padding-right:10px"></i>
+              <span>FullStack Repository</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="work-hero-image">
+          <img src="./assets/images/navitix-app-main.jpg" alt="映画チケット予約システム メイン画面">
+      </div>
+  </section>
+
+  <section class="work-section">
+    <div class="work-container">
+      <h2 class="section-title">プロジェクト概要</h2>
+      <div class="work-content">
+          <p>Next.jsのApp Router構成に、BaaSであるSupabaseを連携させたサーバーレスな会員制予約システムです。ユーザー認証、映画情報表示、座席予約、Stripe連携による決済機能など、実際のWebサービスに必要な一連の機能を実装しました。</p>
+          <p>データベース、認証、ストレージをSupabaseで一元管理することで、バックエンドAPI開発の負荷を軽減し、フロントエンド（Next.js/Mui）の開発と実装に注力しました。開発専門職としての経験を活かし、特に座席予約のデータ整合性確保に工夫を凝らしました。</p>
+      </div>
+
+      <div class="project-info-grid">
+        <div class="project-info-item">
+          <h4>期間</h4>
+          <p>2025年8月 - 2025年10月</p>
+        </div>
+        <div class="project-info-item">
+          <h4>役割</h4>
+          <p>企画 / フロントエンド設計・実装 / DB設計 / Supabase連携 / テスト</p>
+        </div>
+        <div class="project-info-item">
+          <h4>チーム規模</h4>
+          <p>1名（個人開発）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work-section tech-stack-section">
+      <div class="work-container">
+          <h2 class="section-title">技術スタック</h2>
+          
+          <div class="tech-category">
+              <h3 class="tech-category-title">フレームワーク・言語・UI</h3>
+              <div class="tech-grid">
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-react"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Next.js 14</h4>
+                          <p>App Router採用、Server ComponentsとClient Componentsを使い分け</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fab fa-js"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>TypeScript</h4>
+                          <p>全域で型安全性を確保し、保守性を向上</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-palette"></i> </div>
+                      <div class="tech-info">
+                          <h4>Mui (Material-UI)</h4>
+                          <p>コンポーネントライブラリによる迅速なUI構築</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="tech-category">
+              <h3 class="tech-category-title">データベース・BaaS</h3>
+              <div class="tech-grid">
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-server"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Supabase</h4>
+                          <p>PostgreSQLベースのDB、認証、ストレージを統合</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-user-lock"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Supabase Auth</h4>
+                          <p>会員認証機能（メールアドレス・パスワード）</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-code-branch"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>RLS (Row Level Security)</h4>
+                          <p>SupabaseのRLS機能でDBへのアクセス制御を実装</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="tech-category">
+              <h3 class="tech-category-title">外部サービス (SaaS)・デプロイ</h3>
+              <div class="tech-grid">
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-credit-card"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Stripe</h4>
+                          <p>決済機能の実装（テストモードで利用）</p>
+                      </div>
+                  </div>
+                  <div class="tech-item">
+                      <div class="tech-icon">
+                          <i class="fas fa-rocket"></i>
+                      </div>
+                      <div class="tech-info">
+                          <h4>Vercel</h4>
+                          <p>Next.jsのホスティングとGit連携による自動デプロイ</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="work-section db-design-section">
+      <div class="work-container">
+        <h2 class="section-title">テーブル設計</h2>
+              
+        <div class="mermaid">
+        erDiagram
+        Users {
+            int id PK "AUTO_INCREMENT"
+            varchar(100) email UK "NOT NULL"
+            varchar(255) password_hash
+            varchar(100) name
+            timestamp created_at "NOT NULL"
+        }
+
+        Movies {
+            int id PK "AUTO_INCREMENT"
+            varchar(255) title "NOT NULL"
+            varchar(50) genre
+            int duration_minutes "NOT NULL"
+            text synopsis
+            varchar(255) image_url
+        }
+
+        Screens {
+            int id PK "AUTO_INCREMENT"
+            varchar(50) name "NOT NULL"
+            int total_seats "NOT NULL"
+            int theatre_id FK
+        }
+        
+        Schedules {
+            int id PK "AUTO_INCREMENT"
+            int movie_id FK "NOT NULL"
+            int screen_id FK "NOT NULL"
+            timestamp start_time "NOT NULL"
+            timestamp end_time "NOT NULL"
+            decimal base_price "NOT NULL, precision 10 scale 2"
+        }
+
+        Seats {
+            int id PK "AUTO_INCREMENT"
+            int screen_id FK "NOT NULL"
+            varchar(5) seat_row "NOT NULL"
+            int seat_number "NOT NULL"
+        }
+
+        Bookings {
+            int id PK "AUTO_INCREMENT"
+            int user_id FK "NOT NULL"
+            int schedule_id FK "NOT NULL"
+            varchar(32) booking_reference UK "NOT NULL, UNIQUE"
+            varchar(50) payment_status "NOT NULL"
+            timestamp booking_time "NOT NULL"
+            decimal total_amount "NOT NULL, precision 10 scale 2"
+        }
+
+        BookingSeats {
+            int id PK "AUTO_INCREMENT"
+            int booking_id FK "NOT NULL"
+            int seat_id FK "NOT NULL"
+            int schedule_id FK "NOT NULL"
+            varchar(10) seat_status "NOT NULL"
+        }
+
+        Payments {
+            int id PK "AUTO_INCREMENT"
+            int booking_id FK "NOT NULL"
+            varchar(100) stripe_charge_id UK "NOT NULL"
+            decimal amount "NOT NULL, precision 10 scale 2"
+            timestamp payment_date "NOT NULL"
+        }
+
+        %% Relationships
+        Users ||--o{ Bookings : "places"
+        Movies ||--o{ Schedules : "has"
+        Screens ||--o{ Schedules : "hosts"
+        Screens ||--o{ Seats : "contains"
+        Schedules ||--o{ Bookings : "is for"
+        Bookings ||--o{ BookingSeats : "includes"
+        Seats ||--o{ BookingSeats : "is"
+        Bookings ||--o{ Payments : "requires"
+        BookingSeats ||--o{ Schedules : "is part of"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work-section">
+      <div class="work-container">
+          <h2 class="section-title">実装の背景と工夫した点</h2>
+          
+          <div class="feature-list">
+              <div class="feature-item">
+                  <div class="feature-number">01</div>
+                  <div class="feature-content">
+                      <h3>SupabaseとNext.jsによる効率的なサーバーレス構成</h3>
+                      <p>DB、認証、APIサーバーを**Supabase**で代替し、Next.jsの**App Router**でフロントエンドに注力する構成を採用しました。これにより、Javaなどのバックエンド開発が不要になり、開発リソースをユーザー体験の向上に集中させることができました。Next.jsのAPI RoutesはStripe連携やSupabaseのデータ操作など、サーバーサイドのロジックに限定して使用しました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">02</div>
+                  <div class="feature-content">
+                      <h3>MUIによるデザインと開発速度の両立</h3>
+                      <p>UIコンポーネントにはMui (Material-UI)を採用し、一貫性のあるデザインを短時間で実現しました。これにより、細かなCSS設計に時間を割くことなく、ビジネスロジックの実装に専念できました。特に、複雑なフォームやモーダルの実装においてMUIの豊富なコンポーネントが役立ちました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">03</div>
+                  <div class="feature-content">
+                      <h3>RLSを活用したデータ整合性担保</h3>
+                      <p>RLS (Row Level Security)を活用し、認証済みのユーザーのみが自分の予約情報を操作できるように、データベースレベルでのアクセス制御を実装しました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">04</div>
+                  <div class="feature-content">
+                      <h3>Supabase AuthとStripeによるセキュアな会員・決済機能</h3>
+                      <p>Supabase Authで安全なユーザー認証とセッション管理を実装し、外部の決済代行サービスStripe Checkoutとの連携により、機密性の高いカード情報をサーバー側で保持しない設計としました。これにより、開発者がセキュリティリスクを負うことなく、認証・決済機能をサービスに組み込むことができました。</p>
+                  </div>
+              </div>
+
+              <div class="feature-item">
+                  <div class="feature-number">05</div>
+                  <div class="feature-content">
+                      <h3>TypeScriptによるSupabaseスキーマの型付け</h3>
+                      <p>Supabaseのスキーマ定義からTypeScriptの型定義を自動生成する機能を利用しました。これにより、DBアクセスコード全体で型安全性が確保され、データベースの変更に対する追従性やコードの品質（保守性）が大幅に向上しました。</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="work-section back-section">
+      <div class="work-container">
+          <a href="./index.html#works" class="back-button">
+              <i class="fas fa-arrow-left"></i>
+              Works一覧に戻る
+          </a>
+      </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Portfolio. All rights reserved.</p>
+  </footer>
+</body>
+</html>
