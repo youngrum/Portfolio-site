@@ -10,7 +10,14 @@
   <script src="./assets/js/script.js" defer></script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
+        mermaid.initialize({ 
+      startOnLoad: true,
+      theme: 'default',
+      er: {
+        fontSize: 12,
+        layoutDirection: 'LR'
+      }
+    });
   </script>
 </head>
 <body>
@@ -62,12 +69,12 @@
   <section class="work-section">
     <div class="work-container">
       <h2 class="section-title">プロジェクト概要</h2>
-      <div class="work-content">
+      <div class="work-content fade-in">
           <p>Next.jsのApp Router構成に、BaaSであるSupabaseを連携させたサーバーレスな会員制予約システムです。ユーザー認証、映画情報表示、座席予約、Stripe連携による決済機能など、実際のWebサービスに必要な一連の機能を実装しました。</p>
           <p>データベース、認証、ストレージをSupabaseで一元管理することで、バックエンドAPI開発の負荷を軽減し、フロントエンド（Next.js/Mui）の開発と実装に注力しました。開発専門職としての経験を活かし、特に座席予約のデータ整合性確保に工夫を凝らしました。</p>
       </div>
 
-      <div class="project-info-grid">
+      <div class="project-info-grid fade-in">
         <div class="project-info-item">
           <h4>期間</h4>
           <p>2025年8月 - 2025年10月</p>
@@ -90,13 +97,13 @@
           
           <div class="tech-category">
               <h3 class="tech-category-title">フレームワーク・言語・UI</h3>
-              <div class="tech-grid">
+              <div class="tech-grid fade-in">
                   <div class="tech-item">
                       <div class="tech-icon">
                           <i class="fab fa-react"></i>
                       </div>
                       <div class="tech-info">
-                          <h4>Next.js 14</h4>
+                          <h4>Next.js 15</h4>
                           <p>App Router採用、Server ComponentsとClient Componentsを使い分け</p>
                       </div>
                   </div>
@@ -122,7 +129,7 @@
 
           <div class="tech-category">
               <h3 class="tech-category-title">データベース・BaaS</h3>
-              <div class="tech-grid">
+              <div class="tech-grid fade-in">
                   <div class="tech-item">
                       <div class="tech-icon">
                           <i class="fas fa-server"></i>
@@ -155,7 +162,7 @@
 
           <div class="tech-category">
               <h3 class="tech-category-title">外部サービス (SaaS)・デプロイ</h3>
-              <div class="tech-grid">
+              <div class="tech-grid fade-in">
                   <div class="tech-item">
                       <div class="tech-icon">
                           <i class="fas fa-credit-card"></i>
@@ -180,106 +187,123 @@
   </section>
 
   <section class="work-section db-design-section">
-      <div class="work-container">
-        <h2 class="section-title">テーブル設計</h2>
-              
-        <div class="mermaid">
-        erDiagram
-        Users {
-            int id PK "AUTO_INCREMENT"
-            varchar(100) email UK "NOT NULL"
-            varchar(255) password_hash
-            varchar(100) name
-            timestamp created_at "NOT NULL"
-        }
+    <div class="work-container">
+      <h2 class="section-title">テーブル設計</h2>
 
-        Movies {
-            int id PK "AUTO_INCREMENT"
-            varchar(255) title "NOT NULL"
-            varchar(50) genre
-            int duration_minutes "NOT NULL"
-            text synopsis
-            varchar(255) image_url
+      <div class="mermaid">
+      erDiagram
+        auth_users {
+            UUID id PK
+            STRING email
+            STRING encrypted_password
+            TIMESTAMP created_at
+            TIMESTAMP updated_at
         }
-
-        Screens {
-            int id PK "AUTO_INCREMENT"
-            varchar(50) name "NOT NULL"
-            int total_seats "NOT NULL"
-            int theatre_id FK
+        profiles {
+            UUID id PK
+            STRING name
+            DATE birth_day
+            TIMESTAMP created_at
+        }
+        prefectures {
+            BIGINT id PK
+            STRING name
+        }
+        cities {
+            BIGINT id PK
+            STRING name
+            STRING alias
+        }
+        prefecture_cities {
+            BIGINT id PK
+            BIGINT prefecture_id FK
+            BIGINT city_id FK
+        }
+        theaters {
+            BIGINT id PK
+            STRING name
+            BIGINT prefecture_id FK
+            BIGINT city_id FK
+            STRING post_code
+            STRING address
+            STRING photo_path
+        }
+        auditoriums {
+            BIGINT id PK
+            BIGINT theater_id FK
+            STRING name
+            INT total_seats
+        }
+        seats {
+            BIGINT id PK
+            BIGINT auditorium_id FK
+            STRING seat_row
+            STRING seat_number
+            STRING seat_type
+            INT fee
+        }
+        reservations {
+            BIGINT id PK
+            UUID user_id FK
+            TIMESTAMP reserved_at
+            INT total_amount
+            STRING payment_status
+            STRING unique_code
+            TIMESTAMP cancelled_at
+            BIGINT movie_id
+            BIGINT auditorium_id FK
+            TIMESTAMP start_time
+            TIMESTAMP end_time
+            STRING movie_title
+            STRING poster_path
+            STRING seats
+            TIMESTAMP paid_at
+            STRING theater_name
+            STRING auditorium_name
+            STRING cancellation_reason
+            STRING stripe_payment_id
+            STRING stripe_refund_id
+            TIMESTAMP refunded_at
+            STRING stripe_session_id
+        }
+        seat_reservations {
+            BIGINT id PK
+            BIGINT seat_id FK
+            BIGINT reservation_id FK
+            STRING status
+            TIMESTAMP locked_until
         }
         
-        Schedules {
-            int id PK "AUTO_INCREMENT"
-            int movie_id FK "NOT NULL"
-            int screen_id FK "NOT NULL"
-            timestamp start_time "NOT NULL"
-            timestamp end_time "NOT NULL"
-            decimal base_price "NOT NULL, precision 10 scale 2"
-        }
-
-        Seats {
-            int id PK "AUTO_INCREMENT"
-            int screen_id FK "NOT NULL"
-            varchar(5) seat_row "NOT NULL"
-            int seat_number "NOT NULL"
-        }
-
-        Bookings {
-            int id PK "AUTO_INCREMENT"
-            int user_id FK "NOT NULL"
-            int schedule_id FK "NOT NULL"
-            varchar(32) booking_reference UK "NOT NULL, UNIQUE"
-            varchar(50) payment_status "NOT NULL"
-            timestamp booking_time "NOT NULL"
-            decimal total_amount "NOT NULL, precision 10 scale 2"
-        }
-
-        BookingSeats {
-            int id PK "AUTO_INCREMENT"
-            int booking_id FK "NOT NULL"
-            int seat_id FK "NOT NULL"
-            int schedule_id FK "NOT NULL"
-            varchar(10) seat_status "NOT NULL"
-        }
-
-        Payments {
-            int id PK "AUTO_INCREMENT"
-            int booking_id FK "NOT NULL"
-            varchar(100) stripe_charge_id UK "NOT NULL"
-            decimal amount "NOT NULL, precision 10 scale 2"
-            timestamp payment_date "NOT NULL"
-        }
-
-        %% Relationships
-        Users ||--o{ Bookings : "places"
-        Movies ||--o{ Schedules : "has"
-        Screens ||--o{ Schedules : "hosts"
-        Screens ||--o{ Seats : "contains"
-        Schedules ||--o{ Bookings : "is for"
-        Bookings ||--o{ BookingSeats : "includes"
-        Seats ||--o{ BookingSeats : "is"
-        Bookings ||--o{ Payments : "requires"
-        BookingSeats ||--o{ Schedules : "is part of"
-        </div>
+        profiles ||--|| auth_users : "references"
+        prefecture_cities }o--|| prefectures : "references"
+        prefecture_cities }o--|| cities : "references"
+        theaters }o--|| prefectures : "references"
+        theaters }o--|| cities : "references"
+        auditoriums }o--|| theaters : "references"
+        seats }o--|| auditoriums : "references"
+        reservations }o--|| auditoriums : "references"
+        reservations }o--|| auth_users : "references"
+        seat_reservations }o--|| seats : "references"
+        seat_reservations }o--|| reservations : "references"
       </div>
     </div>
   </section>
+
 
   <section class="work-section">
       <div class="work-container">
           <h2 class="section-title">実装の背景と工夫した点</h2>
           
           <div class="feature-list">
-              <div class="feature-item">
+              <div class="feature-item fade-in">
                   <div class="feature-number">01</div>
                   <div class="feature-content">
                       <h3>SupabaseとNext.jsによる効率的なサーバーレス構成</h3>
-                      <p>DB、認証、APIサーバーを**Supabase**で代替し、Next.jsの**App Router**でフロントエンドに注力する構成を採用しました。これにより、Javaなどのバックエンド開発が不要になり、開発リソースをユーザー体験の向上に集中させることができました。Next.jsのAPI RoutesはStripe連携やSupabaseのデータ操作など、サーバーサイドのロジックに限定して使用しました。</p>
+                      <p>DB、認証、APIサーバーをSupabaseで代替し、Next.jsのApp Routerでフロントエンドに注力する構成を採用しました。これにより、Javaなどのバックエンド開発が不要になり、開発リソースをユーザー体験の向上に集中させることができました。Next.jsのAPI RoutesはStripe連携やSupabaseのデータ操作など、サーバーサイドのロジックに限定して使用しました。</p>
                   </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item fade-in">
                   <div class="feature-number">02</div>
                   <div class="feature-content">
                       <h3>MUIによるデザインと開発速度の両立</h3>
@@ -287,7 +311,7 @@
                   </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item fade-in">
                   <div class="feature-number">03</div>
                   <div class="feature-content">
                       <h3>RLSを活用したデータ整合性担保</h3>
@@ -295,7 +319,7 @@
                   </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item fade-in">
                   <div class="feature-number">04</div>
                   <div class="feature-content">
                       <h3>Supabase AuthとStripeによるセキュアな会員・決済機能</h3>
@@ -303,7 +327,7 @@
                   </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item fade-in">
                   <div class="feature-number">05</div>
                   <div class="feature-content">
                       <h3>TypeScriptによるSupabaseスキーマの型付け</h3>

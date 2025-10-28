@@ -431,11 +431,28 @@
 
 @media (max-width: 768px) {
     .work-hero {
-        padding: 7rem 2rem 3rem;
+      padding: 7rem 2rem 3rem;
+    }
+
+    .work-hero-text {
+      display: none;
+    }
+
+    .work-hero-image {
+      width: 100%; 
+      max-width: 100%;
+      margin-top: 20px;
+      height: auto;
+    }
+
+    .work-hero-image img {
+      width: 100%;
+      object-fit: contain;
+      height: auto;
     }
 
     .work-section {
-        padding: 4rem 2rem;
+      padding: 4rem 2rem;
     }
     .github-links {
         gap: 1rem;
@@ -445,13 +462,13 @@
         justify-content: flex-start;
     }
 
-    .work-hero-image {
-      display: none;
-    }
-
     .project-info-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .project-info-item h4 {
+      margin-bottom: 0;
     }
 
     .feature-item {
