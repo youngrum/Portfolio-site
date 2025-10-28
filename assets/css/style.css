@@ -207,20 +207,45 @@ section {
   background: var(--white);
   text-align: left;
   padding: 3rem;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::after {
+  content: '→';
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
 }
 
 .work-card:hover {
-    background: var(--bg);
+  background: var(--bg);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.work-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .work-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .work-tags {
@@ -559,52 +584,69 @@ footer {
       border-top: 1px solid var(--border);
   }
 
-    .nav-menu.active {
-        left: 0;
-    }
+  .nav-menu.active {
+      left: 0;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .menu-toggle {
+      display: block;
+  }
 
-    section {
-        padding: 4rem 2rem;
-    }
+  section {
+      padding: 4rem 2rem;
+  }
 
-    .hero {
-        padding: 6rem 2rem 3rem;
-    }
+  .hero {
+      padding: 6rem 2rem 3rem;
+  }
 
-    .hero-content {
-      width: 100%;
-    }
+  .hero-content {
+    width: 100%;
+  }
 
-    .cta-button {
-      width: 100%;
-      text-align: center;
-    }
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
 
-    .nav-container {
-        padding: 0 2rem;
-    }
+  .nav-container {
+      padding: 0 2rem;
+  }
 
-    .works-grid {
-      height: auto;
-        grid-template-columns: 1fr;
-    }
+  .works-grid {
+    height: auto;
+      grid-template-columns: 1fr;
+  }
 
-    .work-card{
-      padding: 0 20 0 20;
-      text-align: left;
-    }
+  .work-card{
+    padding: 0 20 0 20;
+    text-align: left;
+    padding: 2rem;
+    border: 1px solid var(--border);
+  }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
+  .work-card::after {
+    content: '→';
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .work-title {
+    padding-right: 2rem;
+  }
 
-    .about-content {
-        gap: 2rem;
-    }
+  .services-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .about-content {
+      gap: 2rem;
+  }
 /* hero-containerのレイアウトを1カラムに戻す */
     .hero-container {
         grid-template-columns: 1fr; 
